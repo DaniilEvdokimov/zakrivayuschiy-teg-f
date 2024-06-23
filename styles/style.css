@@ -31,7 +31,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 700px;
+  max-inline-size: 700px;
   margin: 100px auto;
   border: 2px solid var(--accent-color);
   font-family: var(--accent-font), fantasy;
@@ -91,8 +91,8 @@
   content: "";
   position: absolute;
   inset: 100% 0 0 0;
-  width: 100%;
-  height: 2px;
+  inline-size: 100%;
+  block-size: 2px;
   opacity: 0.6;
   background-color: var(--accent-color);
   transition: transform 0.3s ease;
@@ -125,7 +125,7 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
-  max-width: 700px;
+  max-inline-size: 700px;
   margin: auto;
 }
 
@@ -147,14 +147,14 @@
 
 .card__image-wrapper {
   position: relative;
-  max-height: 696px;
+  max-block-size: 696px;
 }
 
 .card__image {
   position: relative;
   z-index: 1;
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
   border: none;
   object-fit: cover;
   object-position: center;
@@ -208,10 +208,10 @@
 }
 
 .card__icon-button {
-  width: 42px;
-  height: 38px;
-  border: 2px solid transparent;
+  inline-size: 42px;
+  block-size: 38px;
   padding: 0;
+  border: 2px solid transparent;
   background-color: transparent;
   transition: border 0.3s ease;
 }
@@ -225,21 +225,21 @@
 }
 
 .like-icon {
-  width: 39px;
-  height: 36px;
+  inline-size: 39px;
+  block-size: 36px;
 }
 
 .card__like-button {
   position: relative;
-  width: 130px;
-  height: 38px;
-  border: 2px solid var(--accent-color);
+  inline-size: 130px;
+  block-size: 38px;
   padding: 9px 17px;
+  border: 2px solid var(--accent-color);
   font-family: var(--accent-font), fantasy;
   font-weight: 400;
   font-size: 14px;
   font-style: normal;
-  line-height: 90%; /* 12.6px */
+  line-height: 90%;
   background-color: transparent;
 }
 
@@ -249,23 +249,25 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  min-width: 339px;
-  min-height: 55px;
+  min-inline-size: 339px;
+  min-block-size: 55px;
   margin: 0 auto 103px;
-  border: 2px solid var(--accent-color);
   padding: 0;
+  border: 2px solid var(--accent-color);
   background-color: var(--background-color);
 }
 
 .save__button-image {
-  width: 21px;
-  height: 21px;
+  inline-size: 21px;
+  block-size: 21px;
 }
 
 .save__button-label {
   font-family: var(--accent-font), fantasy;
   font-size: 14px;
 }
+
+/*filters for cards*/
 
 .sepia {
   filter: sepia(60%);
@@ -297,4 +299,114 @@
 
 .invert {
   filter: invert(20%) brightness(120%) sepia(10%);
+}
+
+.dialog {
+  border: 2px solid var(--accent-color);
+  color: inherit;
+  background-color: inherit;
+}
+
+.dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+}
+
+.dialog-form {
+  margin: 30px;
+}
+
+.dialog-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.dialog-image {
+  inline-size: 39px;
+  block-size: 39px;
+}
+
+.dialog-text {
+  display: block;
+  max-inline-size: 234px;
+  font-family: var(--accent-font), fantasy;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 150%;
+  text-transform: uppercase;
+}
+
+.dialog-button {
+  position: relative;
+  display: block;
+  inline-size: 100%;
+  min-block-size: 38px;
+  margin-top: 30px;
+  border: 2px solid var(--accent-color);
+  font-family: var(--accent-font), fantasy;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 90%;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+
+.decorated-button {
+  transition: box-shadow 0.3s ease;
+}
+
+.decorated-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  background-color: var(--accent-button-color);
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+  mix-blend-mode: difference;
+}
+
+.decorated-button:hover::after {
+  transform: scaleX(1);
+}
+
+.decorated-button:focus {
+  box-shadow: 2px 2px 0 var(--accent-color);
+  outline: none;
+}
+
+@media (width <= 375px) {
+  .header-logo {
+    margin-block-start: 120px;
+  }
+
+  .card__image-wrapper {
+    max-block-size: 371px;
+  }
+
+  .save__button {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-inline-size: 310px;
+    min-block-size: 84px;
+    margin: 0 auto 100px;
+  }
+
+  .save__button-image {
+    inline-size: 28px;
+    block-size: 28px;
+  }
+
+  .dialog-text {
+    max-inline-size: 198px;
+  }
+
+  .card__logo {
+    inset: 25px 11px auto auto;
+  }
 }
