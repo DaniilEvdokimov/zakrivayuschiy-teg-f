@@ -266,3 +266,35 @@
   font-family: var(--accent-font), fantasy;
   font-size: 14px;
 }
+
+.sepia {
+  filter: sepia(60%);
+}
+
+.grayscale {
+  filter: grayscale(65%);
+}
+
+.saturate {
+  filter: saturate(2);
+}
+
+.brightness {
+  filter: brightness(120%);
+}
+
+.contrast {
+  filter: contrast(150%);
+}
+
+.blur {
+  filter: blur(2px);
+}
+
+.hue-rotate {
+  filter: hue-rotate(10deg) sepia(60%) contrast(110%);
+}
+
+.invert {
+  filter: invert(20%) brightness(120%) sepia(10%);
+}
