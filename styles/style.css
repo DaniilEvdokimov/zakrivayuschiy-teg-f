@@ -255,7 +255,6 @@
 .save__button-image {
   inline-size: 21px;
   block-size: 21px;
-  mix-blend-mode: difference;
 }
 
 .save__button-label {
