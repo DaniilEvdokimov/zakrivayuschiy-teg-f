@@ -243,6 +243,8 @@
 .save__button-image {
   inline-size: 21px;
   block-size: 21px;
+  color: var(--accent-button-color);
+  mix-blend-mode: difference;
 }
 
 .button__text {
@@ -252,6 +254,8 @@
   font-size: 14px;
   font-style: normal;
   line-height: 12.6px;
+  color: var(--accent-button-color);
+  mix-blend-mode: difference;
 }
 
 /*filters for cards*/
