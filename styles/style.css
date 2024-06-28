@@ -225,21 +225,12 @@
 }
 
 .card__like-button {
-  position: relative;
   inline-size: 130px;
   block-size: 38px;
   padding: 9px 17px;
-  border: 2px solid var(--accent-color);
-  font-family: var(--accent-font), fantasy;
-  font-weight: 400;
-  font-size: 14px;
-  font-style: normal;
-  line-height: 90%;
-  background-color: transparent;
 }
 
 .save__button {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -248,8 +239,6 @@
   min-block-size: 55px;
   margin: 0 auto 103px;
   padding: 0;
-  border: 2px solid var(--accent-color);
-  background-color: var(--background-color);
 }
 
 .save__button-image {
@@ -333,26 +322,25 @@
 }
 
 .dialog-button {
-  position: relative;
   display: block;
   inline-size: 100%;
   min-block-size: 38px;
   margin-top: 30px;
+}
+
+.button {
+  position: relative;
   border: 2px solid var(--accent-color);
   font-family: var(--accent-font), fantasy;
   font-weight: 400;
   font-size: 14px;
   font-style: normal;
-  line-height: 90%;
-  text-transform: uppercase;
-  background-color: transparent;
-}
-
-.decorated-button {
+  line-height: 12.6px;
+  background-color: var(--background-color);
   transition: box-shadow 0.3s ease;
 }
 
-.decorated-button::after {
+.button::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -365,15 +353,15 @@
   mix-blend-mode: difference;
 }
 
-.decorated-button:hover::after {
+.button:hover::after {
   transform: scaleX(1);
 }
 
-.decorated-button:focus {
+.button:focus {
   outline: none;
 }
 
-.decorated-button:focus-visible {
+.button:focus-visible {
   box-shadow: 2px 2px 0 var(--accent-color);
 }
 
