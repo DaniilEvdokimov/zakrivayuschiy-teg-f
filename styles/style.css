@@ -238,7 +238,6 @@
   min-inline-size: 339px;
   min-block-size: 55px;
   margin: 0 auto 103px;
-  padding: 0;
 }
 
 .save__button-image {
@@ -246,9 +245,13 @@
   block-size: 21px;
 }
 
-.save__button-label {
+.button__text {
+  position: relative;
   font-family: var(--accent-font), fantasy;
+  font-weight: 400;
   font-size: 14px;
+  font-style: normal;
+  line-height: 12.6px;
 }
 
 /*filters for cards*/
@@ -289,6 +292,7 @@
   border: 2px solid var(--accent-color);
   color: inherit;
   background-color: inherit;
+  /*margin: 30px;*/
 }
 
 .dialog::backdrop {
@@ -331,11 +335,6 @@
 .button {
   position: relative;
   border: 2px solid var(--accent-color);
-  font-family: var(--accent-font), fantasy;
-  font-weight: 400;
-  font-size: 14px;
-  font-style: normal;
-  line-height: 12.6px;
   background-color: var(--background-color);
   transition: box-shadow 0.3s ease;
 }
